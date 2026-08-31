@@ -1338,9 +1338,9 @@ p {
         min-height: 680px;
     }
 
-    .hero-background {
-        object-position: 58% center;
-    }
+   .hero-background {
+    object-position: 58% 68%;
+}
 
     .hero-overlay {
         background:
