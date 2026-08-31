@@ -1606,3 +1606,56 @@ p {
 .trust-item-hetas div span {
     margin-top: 2px;
 }
+/* =========================================================
+   MOBILE HERO / HEADER REFINEMENTS
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    /* Float header over the hero image */
+    .site-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+
+        background: transparent;
+    }
+
+    .header-inner {
+        min-height: 105px;
+        align-items: flex-start;
+        padding-top: 18px;
+    }
+
+    /* Larger logo on mobile */
+    .site-logo {
+        width: 118px;
+    }
+
+    /* Keep hamburger aligned nicely with logo */
+    .nav-toggle-label {
+        margin-top: 14px;
+    }
+
+    /* Dropdown still needs a solid background when opened */
+    .main-nav {
+        top: 100px;
+        background: var(--brown);
+    }
+
+    /* Let content determine hero height instead of forcing 680px */
+    .hero {
+        min-height: 0;
+        align-items: flex-start;
+    }
+
+    /* Create room for floating logo/header,
+       but tighten the space below the buttons */
+    .hero-content {
+        padding-top: 145px;
+        padding-bottom: 48px;
+    }
+
+}
