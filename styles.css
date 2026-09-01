@@ -2025,3 +2025,8 @@ body.lightbox-open {
     }
 
 }
+.early-experience-badge strong {
+    font-family: var(--heading-font);
+    font-size: 1.45rem;
+    line-height: 1.05;
+}
