@@ -466,44 +466,42 @@
 
                 <div class="work-grid">
 
-                    <div class="work-item work-item-large">
-                        <img
-                            src="images/job-1.jpg"
-                            alt="Recent Denshaw Stoves installation"
-                        >
-                    </div>
+    <a href="images/job-1.jpg" class="work-item work-item-large lightbox-trigger">
+        <img
+            src="images/job-1.jpg"
+            alt="Recent Denshaw Stoves installation"
+        >
+    </a>
 
-                    <div class="work-item">
-                        <img
-                            src="images/job-2.jpg"
-                            alt="Recent Denshaw Stoves job"
-                        >
-                    </div>
+    <a href="images/job-2.jpg" class="work-item lightbox-trigger">
+        <img
+            src="images/job-2.jpg"
+            alt="Recent Denshaw Stoves job"
+        >
+    </a>
 
-                    <div class="work-item">
-                        <img
-                            src="images/job-3.jpg"
-                            alt="Recent Denshaw Stoves installation"
-                        >
-                    </div>
+    <a href="images/job-3.jpg" class="work-item lightbox-trigger">
+        <img
+            src="images/job-3.jpg"
+            alt="Recent Denshaw Stoves installation"
+        >
+    </a>
 
-                    <div class="work-item">
-                        <img
-                            src="images/job-4.jpg"
-                            alt="Recent Denshaw Stoves job"
-                        >
-                    </div>
+    <a href="images/job-4.jpg" class="work-item lightbox-trigger">
+        <img
+            src="images/job-4.jpg"
+            alt="Recent Denshaw Stoves job"
+        >
+    </a>
 
-                    <div class="work-item">
-                        <img
-                            src="images/job-5.jpg"
-                            alt="Recent Denshaw Stoves installation"
-                        >
-                    </div>
+    <a href="images/job-5.jpg" class="work-item lightbox-trigger">
+        <img
+            src="images/job-5.jpg"
+            alt="Recent Denshaw Stoves installation"
+        >
+    </a>
 
-                </div>
-
-            </div>
+</div>
 
         </section>
 
@@ -949,6 +947,68 @@
         </a>
 
     </div>
+<!-- IMAGE LIGHTBOX -->
+<div class="image-lightbox" id="image-lightbox" aria-hidden="true">
 
+    <button
+        class="lightbox-close"
+        type="button"
+        aria-label="Close image"
+    >
+        ×
+    </button>
+
+    <img
+        src=""
+        alt=""
+        class="lightbox-image"
+    >
+
+</div>
+    <script>
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
+
+    lightboxTriggers.forEach(trigger => {
+        trigger.addEventListener('click', event => {
+            event.preventDefault();
+
+            const image = trigger.querySelector('img');
+
+            lightboxImage.src = trigger.href;
+            lightboxImage.alt = image.alt;
+
+            lightbox.classList.add('active');
+            lightbox.setAttribute('aria-hidden', 'false');
+
+            document.body.classList.add('lightbox-open');
+        });
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+
+        lightboxImage.src = '';
+
+        document.body.classList.remove('lightbox-open');
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', event => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+</script>
 </body>
 </html>
