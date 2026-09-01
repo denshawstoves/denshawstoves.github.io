@@ -1765,3 +1765,46 @@ p {
     height: auto;
     aspect-ratio: 1 / 1;
 }
+.reviews-more {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 42px;
+}
+
+.reviews-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    font-family: var(--heading-font);
+    font-size: 0.95rem;
+    font-weight: 800;
+
+    color: var(--dark);
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.reviews-more-link .facebook-icon {
+    width: 17px;
+    height: 17px;
+
+    color: #1877f2;
+}
+
+.reviews-more-link > span {
+    color: var(--orange);
+
+    transition: transform 0.2s ease;
+}
+
+.reviews-more-link:hover {
+    color: var(--orange);
+}
+
+.reviews-more-link:hover > span {
+    transform: translateX(4px);
+}
