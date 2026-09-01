@@ -1929,3 +1929,99 @@ p {
     }
 
 }
+/* =========================================================
+   IMAGE LIGHTBOX
+   ========================================================= */
+
+.work-item {
+    cursor: zoom-in;
+}
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0.92);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.image-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-image {
+    max-width: 92vw;
+    max-height: 88vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 22px;
+    right: 28px;
+
+    width: 48px;
+    height: 48px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--white);
+
+    font-size: 2rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+    background: var(--orange);
+    transform: scale(1.05);
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+@media (max-width: 650px) {
+
+    .image-lightbox {
+        padding: 20px;
+    }
+
+    .lightbox-image {
+        max-width: 96vw;
+        max-height: 82vh;
+    }
+
+    .lightbox-close {
+        top: 14px;
+        right: 14px;
+    }
+
+}
