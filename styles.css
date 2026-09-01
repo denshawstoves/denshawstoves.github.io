@@ -1913,3 +1913,19 @@ p {
     }
 
 }
+.footer-hetas {
+    margin-top: 28px;
+}
+
+.footer-hetas img {
+    width: 125px;
+    height: auto;
+    display: block;
+}
+@media (max-width: 650px) {
+
+    .footer-hetas img {
+        width: 110px;
+    }
+
+}
